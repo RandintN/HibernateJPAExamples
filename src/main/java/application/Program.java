@@ -24,7 +24,12 @@ public class Program {
 			em.persist(p3);
 		em.getTransaction().commit();
 
-		System.out.println("Pronto!");
+		final Person person = em.find(Person.class, 2);
+		em.getTransaction().begin();
+		em.remove(person);
+		em.getTransaction().commit();
+
+		System.out.println("Done");
 		em.close();
 		emFactory.close();
 	}

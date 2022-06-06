@@ -20,7 +20,7 @@ public class Person implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "nome_completo")
-    private String nome;
+    private String name;
     private String email;
 
     @Override
